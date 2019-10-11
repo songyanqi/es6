@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文案显示隐藏</title>
+    <style>
+        .box{
+            width:100px;
+            height:50px;
+            background: #dddddd;
+        }
+        p {
+            font-size:12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        input[name="toggle"]:checked + p{
+            -webkit-line-clamp: unset;
+        }
+        label::after {
+            content: "显示更多";
+        }
+        /* input[name="toggle"]:checked  {
+            & ~ label {
+                &::after {
+                    content: "收起文本";
+                }
+            }
+        } */
+        input[name="toggle"]:checked ~ label::after {
+            content: "收起文本";
+        }
+    </style>
+</head>
+<body>
+    <!-- 文字超出两行... 隐藏 点击显示全部显示全部文案变成收起文案 -->
+    <div class="box">
+        <input type="checkbox" name="toggle" id="toggle" style="display: none;">
+        <p>我是一行很长很长的文本内容。。。长到不行哈哈哈哈哈</p>
+        <label for="toggle"></label>
+    </div>
+    
+</body>
+</html>

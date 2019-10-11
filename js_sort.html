@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原生排序的三种方法</title>
+</head>
+<body>
+    <script>
+        // 快速排序
+        /*
+            原理：取出数组的中间项，然后把数组剩下的每一项与该项进行比较
+            ，如果小于该项就放在该项的左边，大于该项就放在该项的右边；
+            再分别把左边的项和右边的项的中间项取出，
+            重复上面的步骤到项数小于等于1为止；最后把所获得的项进行拼接。*/ 
+        var ary = [2,14,8,6,1];
+        function quarr(arr){
+            if(arr.length <= 1){
+                return arr 
+            }
+            var num = Math.floor(arr.length/2);
+
+            // arr.splice(num,1) 返回一个新的数组
+            var numValue = arr.splice(num,1)[0];    // 8
+            var left = [];//[2,6,1]   [2,1]   []
+            var right = [];//[14,8]   [6]  [2,1] [2]
+            for(var i = 0;i < arr.length; i++){
+                var cur = arr[i];
+                if(cur < numValue){
+                    left.push(cur);
+                }else{
+                    right.push(cur)
+                }
+            }
+            console.log(num,numValue,left,numValue,right)
+
+            //  2 8     [2, 6, 1]  [8]   [14] "-----"    
+            //  1 6     [2, 1]     [6]   [] "-----"      
+            //  1 1     []         [1]   [2] "-----"     
+            return quarr(left).concat([numValue],quarr(right));
+        }
+        document.write(quarr(ary))// 1,2,6,8,14
+        // 冒泡排序
+        // 插入排序
+        // 原理：取出数组的第一项放到新数组里，让剩余的每一项与新数组的每一项进行比较，小的放左边，大的放右边。
+        var arr1 = [12,5,7,3,17,9,1];
+        function arr1Sort(){
+            var left = arr1.splice(0,1);[12]
+            for(var i = 0; i < arr1.length;i++){
+                var newArr = arr1[i];
+                for(var j = left.length-1;j >= 0;){
+                    
+                }
+            }
+            
+        }
+        document.write(arr1Sort(arr1))
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>匹配数据下的内容</title>
+</head>
+<body>
+    <script>
+        // var albumVideos = [
+        //     {type: 2, albumId: 4579, videoId: 68001}, 
+        //     {type: 2, albumId: 3954, videoId: 68324},
+        //     {type: 2, albumId: 1466, videoId: 6883},
+        //     {type: 2, albumId: 1469, videoId: 6884}
+        // ]
+        // albumVideos.forEach(element => {
+        //     if(element.videoId == 6883){
+        //         console.log(element.albumId)
+        //     }
+        // });
+        // 排序
+        // var indexSort = [
+        //     { index : 1 } , 
+        //     { index : 5 } , 
+        //     { index : 3 } ,
+        //     { index : 2 } , 
+        //     { index : 14 } ,
+        //     { index : 0 }
+        // ];
+        let arr = [{index : 1} , { index : 5} , { index : 3 } ,{ index : 2}, { index : 4 } , { index : 0 }];
+        let urls = []
+        for( let i in arr ){
+            (function(j){
+                console.log(j)
+                urls.push(arr.filter( item => {
+                    return item.index == j
+                } )[0])
+            })(i)
+        }
+        console.log(urls,'11')
+        //定义一个函数
+        // arr.filter(item=>{
+        //     item.index == j
+        // })
+        // function sortNumber(pro) { 
+        //     return function (obj1, obj2) { 
+        //         var val1 = obj1[pro]; 
+        //         var val2 = obj2[pro]; 
+        //         if (val1 < val2 ) { //正序
+        //             return 1; 
+        //         } else if (val1 > val2 ) { 
+        //             return -1; 
+        //         } else { 
+        //             return 0; 
+        //         } 
+        //     } 
+        // } 
+        // //使用方法 
+        // var a = indexSort.sort(sortNumber("index")); 
+        // console.log(a)
+    </script>
+</body>
+</html>

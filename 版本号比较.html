@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>版本号比较</title>
+</head>
+<body>
+    <script>
+        // a = "1.7.5"
+        // b = "1.7.10"
+        function toNum(num){
+            var num = num.toString(); // 将 number 转化为字符串类型 '1.7.5'
+            //也可以这样写 var c=a.split(/\./);
+            var c = num.split('.');  // 将字符串转化为 数组 ['1','7','5']
+
+            var num_place=["","0","00","000","0000"],
+                r = num_place.reverse();  // ["0000", "000", "00", "0", ""]
+
+            for (var i = 0; i < c.length; i++){ 
+                var len = c[i].length;       
+                c[i] = r[len]+c[i]; // '000'+'7' = '0007'
+            } 
+            var versionNum= c.join('');  // 将数组转换为字符串
+            // versionNum = "000100070005", c = (3) ["0001", "0007", "0005"]
+
+            return versionNum; //"000100070005"
+        } 
+        function cpr_version(a,b){ 
+            var _a=toNum(a),_b=toNum(b);   
+            if(_a==_b) console.log("版本号相同！版本号为："+a);    
+            if(_a>_b) console.log("版本号"+a+"是新版本！"); 
+            if(_a<_b) console.log("版本号"+b+"是新版本！"); 
+        }
+        var a="1.7.5";b="1.7.10";    
+        cpr_version(a,b);    
+    </script>
+</body>
+</html>

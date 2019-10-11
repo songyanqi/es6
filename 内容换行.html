@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断数字第一位是否是0</title>
+</head>
+<body>
+    <div class="f-maxWid" v-html="htmlMethods(item.body)"></div>
+</body>
+<script>
+    var obj = '12737';
+    var regExp = /^[1-9]\d*$/;
+    if (!regExp.test(obj)) {
+        obj = '';
+    }
+    console.log(obj)
+    // !/^0/.test('0')
+    
+    // 换行方法
+    // htmlMethods(val){
+    //     let html = '';
+    //         return html = val.replace(/\u21b5/g, '<br/>').replace(/[\r\n]/gm, '<br/>'); // 换行
+    // },
+</script>
+</html>

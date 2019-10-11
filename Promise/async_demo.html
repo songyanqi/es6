@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>async demo</title>
+</head>
+<body>
+    <script>
+        var names = '宋艳琪'
+        // async 使用方法
+        // await 一般情况下 在async 内使用 
+        // 定义一个函数 fn new 一个Promise 如果 resolve  有返回值那么 async 定义的函数返回 resolve  内的值
+        
+        function fn(r,text) {
+            return new Promise((resolve, reject) => r ? resolve('resolve成功') : reject(text))
+        }
+
+        async function test(){
+            let result = await fn(names,'请输入名字')
+            console.log(result)
+        }
+        test().then(res=>{
+            console.log('成功')
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+        // function fn() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve('success')
+        //         })
+        //     })
+        // }
+        // async function test() {
+        //     let result = await fn() //因为fn会返回一个Promise对象
+        //     console.log(result)    //这里会打出Promise成功后传递过来的'success'
+        // }
+        // test()
+        </script>
+</body>
+</html>

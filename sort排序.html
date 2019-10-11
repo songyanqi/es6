@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #item {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid blue;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="item"></div>
+</body>
+<script>
+    // 语法：array.sort(fun);参数fun可选。规定排序顺序。必须是函数。 
+    
+    // 注：如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。
+
+    // 如果想按照其他规则进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下： 
+    // 若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。 
+    // 若 a 等于b，则返回 0。 
+    // 若 a 大于 b，则返回一个大于 0 的值。 
+    // 简单点就是：比较函数两个参数a和b，返回a-b 升序，返回b-a 降序 
+
+    // 简述从浏览器地址栏输入url到显示页面的步骤
+    // 涉及的主要流程或步骤有：
+    // ①浏览器根据请求的URL，交给DNS域名解析，找到真实的ip，交给域名解析。
+    // ②服务器交给后端处理完成后返回的数据，浏览器接收文件HTML,CSS,JS图片等。
+    // ③浏览器对加载的资源进行语法解析，建立相应的数据内部结构。
+    // ④解析html，创建dom树，自上而下的顺序
+    // ⑤解析css，优先级：浏览器默认设置<用户设置<外部样式<内联样式<HTML中的style样式；
+    // ⑥将css与dom合并，构建渲染树
+    // ⑦布局重绘重排，页面完成渲染。
+
+    
+    // 面试题：https://juejin.im/post/5bee888fe51d4557fe34e356
+</script>
+</html>

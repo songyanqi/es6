@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤数组</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //filter 返回的是一个新的数组
+    var arr = [
+        {"id":8,"name":"外星人聚集地","userId":null,"vlightId":null,"nickname":null},
+        {"id":15,"name":"动漫","userId":472,"vlightId":"008","nickname":"大核桃测试"},
+        {"id":20,"name":"汤盐的圈子勿删","userId":365,"vlightId":"12548","nickname":"mm"},
+        {"id":24,"name":"养猪猪猪猪猪场","userId":220,"vlightId":"666666","nickname":"heheda!"},
+        {"id":27,"name":"小可爱在此","userId":16,"vlightId":"12413","nickname":"小姐姐"},
+        {"id":28,"name":"宝宝宝宝宝宝宝宝乐园","userId":null,"vlightId":null,"nickname":null},
+        {"id":30,"name":"蛇皮魔性圈","userId":500,"vlightId":"12683","nickname":"　⃢\uD83D\uDC41━\uD83D\uDC41⃢✨️"},
+        {"id":31,"name":"肥宅圈","userId":null,"vlightId":null,"nickname":null},
+        {"id":32,"name":"一二三四五六七一","userId":null,"vlightId":null,"nickname":null},
+        {"id":33,"name":"biubiu","userId":null,"vlightId":null,"nickname":null},
+        {"id":34,"name":"乐凯撒尽量克服","userId":null,"vlightId":null,"nickname":null},
+        {"id":35,"name":"小学圈","userId":null,"vlightId":null,"nickname":null},
+        {"id":36,"name":"中学圈","userId":null,"vlightId":null,"nickname":null},
+        {"id":37,"name":"高中圈","userId":null,"vlightId":null,"nickname":null},
+        {"id":38,"name":"大学圈","userId":null,"vlightId":null,"nickname":null},
+        {"id":39,"name":"脑残圈","userId":null,"vlightId":null,"nickname":null},
+        {"id":40,"name":"啊发顺丰","userId":null,"vlightId":null,"nickname":null},
+        {"id":41,"name":"沙发斯蒂芬","userId":null,"vlightId":null,"nickname":null},
+        {"id":42,"name":"暗室逢灯","userId":null,"vlightId":null,"nickname":null},
+        {"id":43,"name":"发华福很尴尬","userId":null,"vlightId":null,"nickname":null},
+        {"id":44,"name":"撒旦法第三方","userId":null,"vlightId":null,"nickname":null},
+        {"id":45,"name":"闭嘴就","userId":null,"vlightId":null,"nickname":null}
+    ]
+    var newArr = arr.filter(item => item.nickname !== null);
+    console.log(newArr);// 5
+    newArrMap = newArr.map(item=>item.nickname)
+    console.log(newArrMap,newArr);// 5 5
+
+    newArr.forEach(item => {
+        console.log(item,11)
+    })
+    newArr.forEach(function(element){
+        console.log(element);
+    })
+    newArr.forEach(element=> console.log(element))
+    newArr.forEach((element) =>{
+        console.log(element,111)
+    })
+</script>
+</html>

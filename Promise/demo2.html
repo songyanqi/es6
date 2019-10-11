@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise demo</title>
+</head>
+<body>
+    <script>
+        function someAsyncThing() {
+            return new Promise(function(resolve, reject) {
+                // 下面一行会报错，因为x没有声明
+                resolve(2);
+            });
+        };
+
+        someAsyncThing().then(function() {
+            console.log('everything is great');
+        });
+
+        setTimeout(() => { console.log(123) }, 2000);
+        // var a = 2;
+        // const promise = new Promise((resolve,reject)=>{
+        //     if (a == 1){
+        //         resolve('resolve');
+        //     } else {
+        //         reject('reject');
+        //     }
+        // })
+        // promise.then(function(value) {
+        //     console.log(value + '成功呀')
+        // }, function(error) {
+        //     console.log(error + '失败呀')
+        // });
+        //then方法可以接受两个回调函数作为参数。
+        // 第一个回调函数是Promise对象的状态变为resolved时调用
+        // 第二个回调函数是Promise对象的状态变为rejected时调用。
+        // 其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+		<audio src="http://img-cdn.vlightv.com/voice/20190103/a311aec92d5a45c788b472503131826c.aac"></audio>
+	</div>
+</body>
+<script>
+    //JavaScript 中，以数字开头的属性不能用点号引用，必须用方括号。比如，如果一个对象有一个名为 3d 的属性，那么只能用方括号来引用它。下面是具体的例子：
+
+        var years = [1950, 1960, 1970, 1980, 1990, 2000, 2010];
+        console.log(years)
+       // console.log(years.0);   // 语法错误
+        console.log(years[0]);  // √
+        
+        //renderer.3d.setTexture(model, 'character.png');     // 语法错误
+        //renderer['3d'].setTexture(model, 'character.png');  // √
+        var obj = {
+            'name':'songyanqi',
+            '3d':24
+        }
+        console.log(obj['3d']);
+        console.log(typeof(obj.name))
+</script>
+</html>

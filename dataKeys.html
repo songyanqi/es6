@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr6 = [
+            {
+                "Tony": {
+                    "Math": 95,
+                    "English": 79,
+                    "Music": 68
+                    },
+            },{
+                "Simon": {
+                    "Math": 100,
+                    "English": 95,
+                    "Music": 98
+                    },
+
+            },{
+                "Annie": {
+                    "Math": 54,
+                    "English": 65,
+                    "Music": 88
+                }
+            }
+        ]
+        arr6.map(item=>{
+            let arrnew = Object.keys(item); //  获取到对应的索引
+            console.log(arrnew) // ['Tony']['Simon']['Annie]
+            arrnew.map(value=>{
+                console.log(item[value].Math) // 解释为什么item[value].Math 而不是item.value.Math
+                // 因为 vlaue 值是循环出来的变量
+                console.log(value,'value') // Tony Simon Annie
+            })
+        })
+
+        const object1 = {
+            a: 'somestring',
+            b: 42,
+            c: false
+        };
+        Object.keys(object1).forEach(item=>{
+            console.log(object1[item],'object1')
+        })
+        console.log(Object.keys(object1));
+        // expected output: Array ["a", "b", "c"]
+        var person={
+            firstName:"David",
+            lastName:"Walsh",
+            others:"Smith"
+        };
+        console.log(Object.keys(person))
+        Object.keys(person).forEach(function(trait){
+            console.log(person,'person',trait,':',person[trait]);
+        });
+        // person['firstName']
+    </script>
+    <script>
+        /*
+            ☆  传入对象， 返回 包含对象可枚举属性和方法的数组
+
+            var obj = {'a': 'Beijing', 'b': 'Haidian'};
+            console.log(Object.keys(obj));    //['a', 'b']
+
+
+            ☆  传入字符串，返回索引值
+
+            var str = "Beijing"; 
+            console.log(Object.keys(str));
+            // ["0", "1", "2", "3", "4", "5", "6"]
+
+
+            ☆ 传入数组，返回索引值
+
+            var arr = ["a", "b", "c"];
+            console.log(Object.keys(arr));
+            //["0", "1", "2"]
+
+
+            ☆ 构造函数，返回空数组或者属性名
+
+            function Demo(name, age) {
+            this.name = name;
+            this.age = age;
+            }
+            console.log(Object.keys(Demo));
+            // []
+        */
+    </script>
+</body>
+</html>
