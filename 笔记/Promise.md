@@ -10,7 +10,13 @@ var pms1 = new Promise(function(resolve, reject) {
 pms1.then(function(data){ // data 形参 表示 resolve执行成功的里面的 实参
     // 执行下一个任务
 }) 
+
+Promise.resolve('foo')
+// 等价于
+new Promise(resolve => resolve('foo'))
 ```
+
+
 # 语法：
 new Promise( function(resolve, reject) {...} /* executor */  );
 
